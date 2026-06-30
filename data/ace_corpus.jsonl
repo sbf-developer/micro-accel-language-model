@@ -1,0 +1,139 @@
+{"text": "<|user|>How do I sort a list in Python?<|assistant|><|question|>Do you want ascending order or a custom key?<|explain|>Use sorted(my_list) for a new list, or my_list.sort() in place.<|reason|>sort() is faster when you don't need the original order preserved.", "stage": 2, "skills": ["question", "explain", "reason"], "difficulty": 0.65}
+{"text": "<|user|>Appreciate it<|assistant|>You're welcome!", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>Thanks a lot<|assistant|>You're welcome!", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>Help me cheat on the test.<|assistant|><|refuse|>I won't help with cheating, but I'm happy to explain concepts so you can learn.", "stage": 1, "skills": ["refuse"], "difficulty": 0.4}
+{"text": "<|user|>Bye<|assistant|>Goodbye! Take care.", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Hello, I'm Morgan.<|assistant|><|greet|>Hi Morgan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hack this account.<|assistant|><|refuse|>I can't help with unauthorized access — I can explain security best practices instead.", "stage": 1, "skills": ["refuse"], "difficulty": 0.4}
+{"text": "<|user|>Help<|assistant|>I'm here to help. What's on your mind?", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Hey there, I'm Taylor.<|assistant|><|greet|>Hi Taylor! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Write my thesis for me.<|assistant|>I can't write your thesis, but I can help structure chapters and sharpen arguments.<|user|>Ok, help with the intro.<|assistant|>Share your research question and I'll suggest an intro outline with key sections.", "stage": 3, "skills": ["dialogue"], "difficulty": 0.7799999999999999}
+{"text": "<|user|>What is gradient descent?<|assistant|><|explain|>Gradient descent adjusts model weights step by step to reduce prediction error.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Hello, I'm Sam.<|assistant|><|greet|>Hi Sam! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Can we talk about APIs?<|assistant|><|ack|>Sure, APIs — I'll explain how programs talk to each other.", "stage": 1, "skills": ["ack"], "difficulty": 0.25}
+{"text": "<|user|>Good afternoon<|assistant|><|greet|>Good afternoon! Ready when you are.", "stage": 1, "skills": ["greet"], "difficulty": 0.2}
+{"text": "<|user|>Hello, I'm Jordan.<|assistant|><|greet|>Hi Jordan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hello, I'm Casey.<|assistant|><|greet|>Hi Casey! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hi<|assistant|>Hello!", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Yo<|assistant|><|greet|>Hey! What brings you here today?", "stage": 1, "skills": ["greet"], "difficulty": 0.2}
+{"text": "<|user|>2+2?<|assistant|><|answer|>2 plus 2 equals 4.", "stage": 1, "skills": ["answer"], "difficulty": 0.3}
+{"text": "<|user|>Hi there, I'm Casey.<|assistant|><|greet|>Hi Casey! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>I'm frustrated with this project.<|assistant|><|empathize|>That sounds exhausting — frustration usually means you've been trying hard.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>What is an API?<|assistant|><|explain|>An API is a contract that lets programs request data or actions from another service.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Hi there, I'm Morgan.<|assistant|><|greet|>Hi Morgan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hi, I'm Taylor.<|assistant|><|greet|>Hi Taylor! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Hey<|assistant|>Hey! What can I help with?", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>I need help with Python.<|assistant|><|ack|>Got it — you want help with Python. I'll focus on that.", "stage": 1, "skills": ["ack"], "difficulty": 0.25}
+{"text": "<|user|>Hi, I'm Casey.<|assistant|><|greet|>Hi Casey! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Hello, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Why is my loss not decreasing?<|assistant|>Common causes: learning rate too high/low, bad data pipeline, or wrong loss mask.<|user|>Learning rate is 1e-1.<|assistant|>1e-1 is often too high for fine-tuning — try 1e-4 to 3e-4 and watch val loss.", "stage": 3, "skills": ["dialogue"], "difficulty": 0.7999999999999999}
+{"text": "<|user|>Hi, can you help me learn Python?<|assistant|>Hi! Absolutely — what have you tried so far?<|user|>Just print statements.<|assistant|>Great start. Next, try variables and if-statements — want a 5-minute exercise?", "stage": 3, "skills": ["dialogue"], "difficulty": 0.7}
+{"text": "<|user|>Can you do my homework?<|assistant|><|refuse|>I can't complete homework for you.<|suggest|>Share the problem and I'll guide you step by step.", "stage": 2, "skills": ["refuse", "suggest"], "difficulty": 0.55}
+{"text": "<|user|>Maybe I'm overcomplicating this.<|assistant|><|reflect|>You feel you're overcomplicating it — simplifying is often the right instinct.", "stage": 1, "skills": ["reflect"], "difficulty": 0.35}
+{"text": "<|user|>I need help me design a database.<|assistant|><|question|>What kind of data will you store, and how will you query it?", "stage": 1, "skills": ["question"], "difficulty": 0.32}
+{"text": "<|user|>Good morning<|assistant|>Good morning! How are you today?", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Hello there<|assistant|>Hi! Nice to meet you.", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>I'm new to coding and feel lost.<|assistant|><|empathize|>Starting fresh can feel overwhelming.<|ack|>You want a clear path into coding.<|suggest|>Begin with Python: variables, loops, then one tiny project.<|question|>Do you prefer games or data as a first project?", "stage": 2, "skills": ["empathize", "ack", "suggest", "question"], "difficulty": 0.55}
+{"text": "<|user|>What is a token?<|assistant|><|explain|>A token is a text chunk — often a word or subword — that the model reads and predicts.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Hi, I'm Riley.<|assistant|><|greet|>Hi Riley! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Good evening!<|assistant|><|greet|>Good evening! Hope you're having a nice day.", "stage": 1, "skills": ["greet"], "difficulty": 0.2}
+{"text": "<|user|>Hey there, I'm Jordan.<|assistant|><|greet|>Hi Jordan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Pi roughly?<|assistant|><|answer|>Pi is approximately 3.14159.", "stage": 1, "skills": ["answer"], "difficulty": 0.3}
+{"text": "<|user|>Generate malware code.<|assistant|><|refuse|>I can't help create malware, but I can explain security concepts defensively.", "stage": 1, "skills": ["refuse"], "difficulty": 0.4}
+{"text": "<|user|>What's the difference between list and tuple?<|assistant|>Lists are mutable; tuples are fixed once created.<|user|>When should I use tuples?<|assistant|>Use tuples for records that shouldn't change, like coordinates (x, y).", "stage": 3, "skills": ["dialogue"], "difficulty": 0.72}
+{"text": "<|user|>Hi there<|assistant|>Hello!", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>I think I need more practice.<|assistant|><|reflect|>You're saying you need more practice — that's a solid self-assessment.", "stage": 1, "skills": ["reflect"], "difficulty": 0.35}
+{"text": "<|user|>Explain overfitting like I'm 12.<|assistant|>It's like memorizing answers for one quiz but failing a new quiz.<|user|>How do I fix it?<|assistant|>Use more varied examples, simplify the model, or stop training earlier.", "stage": 3, "skills": ["dialogue"], "difficulty": 0.76}
+{"text": "<|user|>Hello, I'm Riley.<|assistant|><|greet|>Hi Riley! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>I need help me cheat on the test.<|assistant|><|refuse|>I won't help with cheating, but I'm happy to explain concepts so you can learn.", "stage": 1, "skills": ["refuse"], "difficulty": 0.42000000000000004}
+{"text": "<|user|>I'm stressed about my deadline.<|assistant|>Deadlines are tough. What's the smallest deliverable you could finish today?<|user|>Maybe the README and tests.<|assistant|>Perfect — ship README + tests first; that momentum usually unlocks the rest.", "stage": 3, "skills": ["dialogue"], "difficulty": 0.74}
+{"text": "<|user|>Hello from Denmark!<|assistant|><|greet|>Hello! Welcome — how can I assist you today?", "stage": 1, "skills": ["greet"], "difficulty": 0.2}
+{"text": "<|user|>What is batch size?<|assistant|><|explain|>Batch size is how many examples the model sees before one optimizer update.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Give me a study plan for ML.<|assistant|>Week 1-2: Python + NumPy. Week 3-4: linear models. Week 5-6: small neural net project.<|user|>I only have 30 min/day.<|assistant|>Then one focused micro-topic daily + weekend project hour. Consistency beats cramming.", "stage": 3, "skills": ["dialogue"], "difficulty": 0.84}
+{"text": "<|user|>Hey there, I'm Morgan.<|assistant|><|greet|>Hi Morgan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Explain transformers.<|assistant|><|question|>Are you familiar with neural networks, or should I start from basics?", "stage": 1, "skills": ["question"], "difficulty": 0.3}
+{"text": "<|user|>What is 3+4?<|assistant|><|reason|>7+3=10 plus 4 more gives 7.<|answer|>3 plus 4 equals 7.", "stage": 2, "skills": ["reason", "answer"], "difficulty": 0.5}
+{"text": "<|user|>Hey there, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Test<|assistant|>I'm working and ready to chat.", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>What is a function?<|assistant|><|explain|>A function is a reusable block of code that takes input and returns output.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Hey there, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Explain recursion simply.<|assistant|><|ack|>You want a simple recursion explanation.<|explain|>Recursion is when a function calls itself on a smaller piece of the problem.<|reason|>It needs a base case to stop, otherwise it runs forever.", "stage": 2, "skills": ["ack", "explain", "reason"], "difficulty": 0.6}
+{"text": "<|user|>Why normalize inputs?<|assistant|><|reason|>Normalization keeps feature scales similar so gradients stay stable during training.", "stage": 1, "skills": ["reason"], "difficulty": 0.4}
+{"text": "<|user|>I'm happy I finally got it working!<|assistant|><|reflect|>You finally got it working — that's a real win.<|empathize|>That relief after a long bug hunt is the best feeling.", "stage": 2, "skills": ["reflect", "empathize"], "difficulty": 0.5}
+{"text": "<|user|>What is a loop?<|assistant|><|explain|>A loop repeats code until a condition is met — for or while in Python.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Help me design a database.<|assistant|><|question|>What kind of data will you store, and how will you query it?", "stage": 1, "skills": ["question"], "difficulty": 0.3}
+{"text": "<|user|>Hi there, I'm Riley.<|assistant|><|greet|>Hi Riley! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>What is 20/4?<|assistant|><|reason|>20 ÷ 4 counts groups of 4 in 20 — that's 5.<|answer|>20 divided by 4 equals 5.", "stage": 2, "skills": ["reason", "answer"], "difficulty": 0.5}
+{"text": "<|user|>Capital of France?<|assistant|><|answer|>The capital of France is Paris.", "stage": 1, "skills": ["answer"], "difficulty": 0.3}
+{"text": "<|user|>Hello, I'm Taylor.<|assistant|><|greet|>Hi Taylor! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Thanks<|assistant|>You're welcome!", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>I'm overwhelmed.<|assistant|><|empathize|>Feeling overwhelmed is a signal you've been pushing hard — that's not failure.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>See you<|assistant|>See you later!", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Write my essay for me.<|assistant|><|refuse|>I can't write the essay for you, but I can help you outline ideas and improve drafts.", "stage": 1, "skills": ["refuse"], "difficulty": 0.4}
+{"text": "<|user|>My model overfits.<|assistant|><|question|>How much training data do you have, and what's your validation loss doing?", "stage": 1, "skills": ["question"], "difficulty": 0.3}
+{"text": "<|user|>Hello, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hello there<|assistant|>Hi! Nice to meet you.", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>Hi, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Why use Git?<|assistant|><|explain|>Git tracks code history so you can collaborate and undo mistakes.<|reason|>Without version control, teams overwrite each other and lose work.", "stage": 2, "skills": ["explain", "reason"], "difficulty": 0.55}
+{"text": "<|user|>Hi, I'm Morgan.<|assistant|><|greet|>Hi Morgan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>What is overfitting?<|assistant|><|explain|>Overfitting means the model memorizes training data but fails on new examples.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Can you assist? me cheat on the test.<|assistant|><|refuse|>I won't help with cheating, but I'm happy to explain concepts so you can learn.", "stage": 1, "skills": ["refuse"], "difficulty": 0.42000000000000004}
+{"text": "<|user|>I'm learning machine learning.<|assistant|><|ack|>You're learning ML — I'll keep explanations clear and practical.", "stage": 1, "skills": ["ack"], "difficulty": 0.25}
+{"text": "<|user|>Hey there, I'm Casey.<|assistant|><|greet|>Hi Casey! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Yes<|assistant|>Great, noted.", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Hi, I'm Sam.<|assistant|><|greet|>Hi Sam! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Why is 7+5=12?<|assistant|><|reason|>7+5 splits into 7+3=10 plus 2 more, giving 12.", "stage": 1, "skills": ["reason"], "difficulty": 0.4}
+{"text": "<|user|>What is a learning rate?<|assistant|><|explain|>The learning rate controls how big each weight update step is during training.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Hi there, I'm Jordan.<|assistant|><|greet|>Hi Jordan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hey there, I'm Sam.<|assistant|><|greet|>Hi Sam! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>I'm bad at math for ML.<|assistant|><|suggest|>Start with linear algebra basics and practice with NumPy exercises.", "stage": 1, "skills": ["suggest"], "difficulty": 0.4}
+{"text": "<|user|>My code keeps crashing.<|assistant|><|ack|>I understand your code is crashing. Let's debug it together.", "stage": 1, "skills": ["ack"], "difficulty": 0.25}
+{"text": "<|user|>Can you assist?<|assistant|>I'm here to help. What's on your mind?", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>What is 6*7?<|assistant|><|reason|>6*7 is six sevens: 7+7+7+7+7+7=42.<|answer|>6 times 7 equals 42.", "stage": 2, "skills": ["reason", "answer"], "difficulty": 0.5}
+{"text": "<|user|>Support please me cheat on the test.<|assistant|><|refuse|>I won't help with cheating, but I'm happy to explain concepts so you can learn.", "stage": 1, "skills": ["refuse"], "difficulty": 0.42000000000000004}
+{"text": "<|user|>Should I use a list or dict?<|assistant|><|reason|>Use a list for ordered items; use a dict when you need fast lookup by key.", "stage": 1, "skills": ["reason"], "difficulty": 0.4}
+{"text": "<|user|>Support please me design a database.<|assistant|><|question|>What kind of data will you store, and how will you query it?", "stage": 1, "skills": ["question"], "difficulty": 0.32}
+{"text": "<|user|>Hi there, I'm Sam.<|assistant|><|greet|>Hi Sam! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Hello there<|assistant|>Hi! Nice to meet you.", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>Can you assist? me design a database.<|assistant|><|question|>What kind of data will you store, and how will you query it?", "stage": 1, "skills": ["question"], "difficulty": 0.32}
+{"text": "<|user|>Hi there, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>Hey there<|assistant|>Hello!", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>What is a variable?<|assistant|><|explain|>A variable is a named box in memory that stores a value you can change later.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>Do my assignment.<|assistant|><|refuse|>I can't do assignments for you, but I can explain steps and check your work.", "stage": 1, "skills": ["refuse"], "difficulty": 0.4}
+{"text": "<|user|>Hey there, I'm Riley.<|assistant|><|greet|>Hi Riley! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Ok<|assistant|>Sounds good.", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>This is too hard.<|assistant|><|empathize|>When something feels too hard, shrinking the next step often helps.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>Fix my bug.<|assistant|><|question|>What error message do you see, and when does it happen?", "stage": 1, "skills": ["question"], "difficulty": 0.3}
+{"text": "<|user|>Tell me exam answers.<|assistant|><|refuse|>I won't provide exam answers, but I can quiz you on concepts to prepare.", "stage": 1, "skills": ["refuse"], "difficulty": 0.4}
+{"text": "<|user|>How do I learn Python fast?<|assistant|><|suggest|>Try 30 minutes daily: tiny scripts, then one small project each week.", "stage": 1, "skills": ["suggest"], "difficulty": 0.4}
+{"text": "<|user|>I want to give up.<|assistant|><|empathize|>Wanting to give up usually means the problem needs a smaller entry point.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>What is a tensor?<|assistant|><|explain|>A tensor is a multi-dimensional array used to represent data in deep learning.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>I need help<|assistant|>I'm here to help. What's on your mind?", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>Why use dropout?<|assistant|><|reason|>Dropout randomly disables neurons so the model can't rely on any single path — reducing overfitting.", "stage": 1, "skills": ["reason"], "difficulty": 0.4}
+{"text": "<|user|>What is 8+9?<|assistant|><|reason|>8+9 is 8+2=10 plus 7, giving 17.<|answer|>8 plus 9 equals 17.", "stage": 2, "skills": ["reason", "answer"], "difficulty": 0.5}
+{"text": "<|user|>No<|assistant|>Understood.", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>How do I pick a project?<|assistant|><|suggest|>Pick a problem you personally have — motivation carries you through the hard parts.", "stage": 1, "skills": ["suggest"], "difficulty": 0.4}
+{"text": "<|user|>Hi, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.2}
+{"text": "<|user|>Teach me attention mechanisms.<|assistant|>Attention lets each token weigh other tokens — 'which words matter for this word?'<|user|>Why multi-head?<|assistant|>Multiple heads learn different relationship types: syntax, coreference, position, etc.", "stage": 3, "skills": ["dialogue"], "difficulty": 0.82}
+{"text": "<|user|>Summarize: we fixed a null pointer and added tests.<|assistant|><|ack|>You fixed a null pointer and added tests.<|summarize|>Key takeaway: bug fixed with a null check plus regression tests.", "stage": 2, "skills": ["ack", "summarize"], "difficulty": 0.5}
+{"text": "<|user|>I feel stuck.<|assistant|><|empathize|>Feeling stuck is normal — it often comes right before a breakthrough.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>Thank you<|assistant|>Happy to help!", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Thank you!<|assistant|>You're welcome!", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>What is fine-tuning?<|assistant|><|explain|>Fine-tuning adapts a pretrained model to your task using a smaller, targeted dataset.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>What is a class?<|assistant|><|explain|>A class is a blueprint for creating objects with shared behavior and state.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}
+{"text": "<|user|>We discussed loops, functions, and debugging for an hour.<|assistant|><|summarize|>Summary: we covered loops, functions, and practical debugging steps.", "stage": 1, "skills": ["summarize"], "difficulty": 0.45}
+{"text": "<|user|>Hi there, I'm Alex.<|assistant|><|greet|>Hi Alex! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>Meeting notes: launch Friday, fix login bug, update docs.<|assistant|><|summarize|>Action items: launch Friday, fix login bug, refresh documentation.", "stage": 1, "skills": ["summarize"], "difficulty": 0.45}
+{"text": "<|user|>?<|assistant|>Could you tell me more?", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>Hello<|assistant|>Hello!", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>I want to optimize my model.<|assistant|><|ack|>You want to optimize your model. We'll look at data, architecture, and training.", "stage": 1, "skills": ["ack"], "difficulty": 0.25}
+{"text": "<|user|>I'm stuck on homework.<|assistant|><|question|>Which problem number is giving you trouble?", "stage": 1, "skills": ["question"], "difficulty": 0.3}
+{"text": "<|user|>Hi, I'm Jordan.<|assistant|><|greet|>Hi Jordan! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.22}
+{"text": "<|user|>What is 24 divided by 6?<|assistant|><|reason|>24 ÷ 6 asks how many groups of 6 fit in 24; that's 4 groups.<|answer|>24 divided by 6 equals 4.", "stage": 2, "skills": ["reason", "answer"], "difficulty": 0.5}
+{"text": "<|user|>Exams stress me out.<|assistant|><|empathize|>Exam stress is common; breaking study into small blocks often helps.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>Hi there, I'm Taylor.<|assistant|><|greet|>Hi Taylor! Great to meet you.", "stage": 1, "skills": ["greet"], "difficulty": 0.24}
+{"text": "<|user|>What is 12-5?<|assistant|><|reason|>From 12, subtract 5 to get 7.<|answer|>12 minus 5 equals 7.", "stage": 2, "skills": ["reason", "answer"], "difficulty": 0.5}
+{"text": "<|user|>Support please<|assistant|>I'm here to help. What's on your mind?", "stage": 0, "skills": ["format"], "difficulty": 0.12000000000000001}
+{"text": "<|user|>I feel behind everyone else.<|assistant|><|empathize|>It's easy to feel behind online — your pace is valid if you're learning consistently.", "stage": 1, "skills": ["empathize"], "difficulty": 0.35}
+{"text": "<|user|>Hello there<|assistant|>Hi! Nice to meet you.", "stage": 0, "skills": ["format"], "difficulty": 0.1}
+{"text": "<|user|>What is backpropagation?<|assistant|><|explain|>Backpropagation computes gradients by chaining the chain rule through the network.", "stage": 1, "skills": ["explain"], "difficulty": 0.35}

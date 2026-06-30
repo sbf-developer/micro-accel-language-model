@@ -1,0 +1,9 @@
+base_model: distilgpt2
+corpus_path: data/ace_corpus.jsonl
+output_dir: checkpoints/accel-ft
+max_seq_len: 256
+batch_size: 8
+base_lr: 2.0e-4
+warmup_steps: 100
+epochs: 15
+# total_steps defaults to len(loader) * epochs

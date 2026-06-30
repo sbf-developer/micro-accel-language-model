@@ -1,0 +1,24 @@
+# ACCEL default training configuration
+vocab_size: 512
+d_model: 128
+n_layers: 2
+n_heads: 4
+n_kv_heads: 2
+ffn_dim: 384
+max_seq_len: 384
+dropout: 0.1
+
+# Training
+batch_size: 8
+base_lr: 3.0e-4
+weight_decay: 0.01
+warmup_steps: 100
+grad_clip: 1.0
+loss_mode: standard  # fisher | focal | standard
+fisher_gamma: 0.5
+focal_gamma: 1.0
+seed: 42
+
+# Paths
+corpus_path: data/ace_corpus.jsonl
+output_dir: checkpoints/accel-v1
