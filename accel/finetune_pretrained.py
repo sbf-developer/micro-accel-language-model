@@ -111,6 +111,10 @@ def finetune(cfg: dict) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     best_val = float("inf")
+    best_state = None
+    patience = cfg.get("early_stop_patience", 4)
+    stale = 0
+    eval_every = cfg.get("eval_every", 25)
     loader_iter = iter(train_loader)
 
     for step in range(total_steps):
@@ -135,7 +139,7 @@ def finetune(cfg: dict) -> None:
         optimizer.step()
         scheduler.step()
 
-        if step % 50 == 0 or step == total_steps - 1:
+        if step % eval_every == 0 or step == total_steps - 1:
             model.eval()
             val_losses = []
             with torch.no_grad():
@@ -146,14 +150,21 @@ def finetune(cfg: dict) -> None:
                     vl = (v_pt * vb["loss_mask"].to(device)).sum() / vb["loss_mask"].sum().clamp(min=1.0)
                     val_losses.append(vl.item())
             val_loss = sum(val_losses) / max(1, len(val_losses))
-            print(f"step {step:5d} | train={loss.item():.4f} | val={val_loss:.4f}", flush=True)
+            print(f"step {step:5d}/{total_steps} | train={loss.item():.4f} | val={val_loss:.4f}", flush=True)
             if val_loss < best_val:
                 best_val = val_loss
-                model.save_pretrained(out_dir / "best")
-                tokenizer.save_pretrained(out_dir / "best")
+                best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+                stale = 0
+            else:
+                stale += 1
+                if stale >= patience:
+                    print(f"Early stop at step {step} (val plateaued).", flush=True)
+                    break
 
-    model.save_pretrained(out_dir / "last")
-    tokenizer.save_pretrained(out_dir / "last")
+    if best_state is not None:
+        model.load_state_dict(best_state)
+    model.save_pretrained(out_dir / "best")
+    tokenizer.save_pretrained(out_dir / "best")
     print(f"Done. Best val={best_val:.4f} -> {out_dir / 'best'}", flush=True)
 
 

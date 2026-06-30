@@ -1,8 +1,9 @@
-"""Chat with ACCEL fine-tuned HuggingFace model."""
+"""Chat with the fine-tuned ACCEL model."""
 
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 
 import torch
@@ -17,52 +18,85 @@ def build_prompt(history: list[tuple[str, str]], user_msg: str) -> str:
     return "".join(parts)
 
 
-def extract_reply(full: str, prompt: str, tok) -> str:
-    text = full[len(prompt):] if full.startswith(prompt) else full.split("<|assistant|>")[-1]
-    eos = tok.eos_token or ""
-    for stop in ("<|user|>", eos):
-        if stop and stop in text:
+def clean_reply(text: str) -> str:
+    for stop in ("<|user|>", "<|assistant|>", "<|endoftext|>", "<|eos|>"):
+        if stop in text:
             text = text.split(stop)[0]
+    text = re.sub(r"<\|[^|]+\|>", "", text)
     return text.strip()
+
+
+def load_chat_model(checkpoint: Path, device: torch.device):
+    tok = AutoTokenizer.from_pretrained(checkpoint)
+    model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
+    model.eval()
+    return model, tok
+
+
+@torch.no_grad()
+def generate_reply(
+    model,
+    tok,
+    prompt: str,
+    device: torch.device,
+    temperature: float,
+    max_tokens: int,
+) -> str:
+    inputs = tok(prompt, return_tensors="pt").to(device)
+    out = model.generate(
+        **inputs,
+        max_new_tokens=max_tokens,
+        do_sample=temperature > 0,
+        temperature=max(temperature, 0.01),
+        top_k=40,
+        top_p=0.9,
+        repetition_penalty=1.15,
+        pad_token_id=tok.eos_token_id,
+        eos_token_id=tok.eos_token_id,
+    )
+    decoded = tok.decode(out[0], skip_special_tokens=False)
+    raw = decoded[len(prompt):] if decoded.startswith(prompt) else decoded.split("<|assistant|>")[-1]
+    return clean_reply(raw)
 
 
 def chat(checkpoint: Path, temperature: float, max_tokens: int) -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    tok = AutoTokenizer.from_pretrained(checkpoint)
-    model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
-    model.eval()
+    print(f"Loading model from {checkpoint} ({device})...", flush=True)
+    model, tok = load_chat_model(checkpoint, device)
 
     history: list[tuple[str, str]] = []
-    print("ACCEL fine-tuned chat (quit to exit)\n")
+    print("\nACCEL chat ready. Type your message (quit / exit to stop).\n")
     while True:
-        user_msg = input("You: ").strip()
-        if not user_msg or user_msg.lower() in {"quit", "exit", "q"}:
+        try:
+            user_msg = input("You: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nBye!")
             break
+        if not user_msg or user_msg.lower() in {"quit", "exit", "q"}:
+            print("Bye!")
+            break
+
         prompt = build_prompt(history, user_msg)
-        inputs = tokenizer(prompt, return_tensors="pt").to(device)
-        with torch.no_grad():
-            out = model.generate(
-                **inputs,
-                max_new_tokens=max_tokens,
-                do_sample=True,
-                temperature=temperature,
-                top_k=40,
-                pad_token_id=tok.eos_token_id,
-            )
-        decoded = tok.decode(out[0], skip_special_tokens=False)
-        reply = extract_reply(decoded, prompt, tok)
-        print(f"Assistant: {reply}\n")
+        reply = generate_reply(model, tok, prompt, device, temperature, max_tokens)
+        print(f"Assistant: {reply or '(no response)'}\n")
         history.append((user_msg, reply))
         if len(history) > 4:
             history = history[-4:]
 
 
-tokenizer = None
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Chat with ACCEL")
     parser.add_argument("--checkpoint", type=Path, default=Path("checkpoints/accel-ft/best"))
     parser.add_argument("--temperature", type=float, default=0.7)
-    parser.add_argument("--max-tokens", type=int, default=100)
+    parser.add_argument("--max-tokens", type=int, default=120)
     args = parser.parse_args()
+
+    if not (args.checkpoint / "config.json").exists():
+        raise SystemExit(
+            f"No model at {args.checkpoint}. Run: py -3.13 run.py --train"
+        )
     chat(args.checkpoint, args.temperature, args.max_tokens)
+
+
+if __name__ == "__main__":
+    main()

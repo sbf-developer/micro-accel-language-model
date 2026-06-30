@@ -24,21 +24,17 @@ Most LLMs need massive data because they learn everything at once. ACCEL inverts
 cd "c:\Users\scott\Desktop\dev\language model"
 py -3.13 -m pip install -r requirements.txt
 
-# 1. Generate the ACE training corpus (~139 high-density examples)
-py -3.13 data/generate_corpus.py
+# Train (first time) + chat in one command
+py -3.13 run.py --train
 
-# 2a. RECOMMENDED — fine-tune DistilGPT-2 (functional chat from minimal data)
-py -3.13 -m accel.finetune_pretrained
+# Chat only (after training)
+py -3.13 run.py
+
+# Or directly:
 py -3.13 chat_ft.py
-
-# 2b. RESEARCH — train MicroGPT from scratch (~460K params, no pretrained weights)
-py -3.13 -m accel.train
-py -3.13 chat.py
-
-# Evaluate
-py -3.13 eval_ft.py      # fine-tuned model
-py -3.13 eval_sample.py  # from-scratch model
 ```
+
+On Windows you can also double-click `chat.bat`.
 
 ## Project layout
 
