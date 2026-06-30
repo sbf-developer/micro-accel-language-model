@@ -42,21 +42,31 @@ def generate_reply(
     temperature: float,
     max_tokens: int,
 ) -> str:
-    inputs = tok(prompt, return_tensors="pt").to(device)
-    out = model.generate(
-        **inputs,
+    gen_kwargs = dict(
         max_new_tokens=max_tokens,
-        do_sample=temperature > 0,
-        temperature=max(temperature, 0.01),
+        min_new_tokens=3,
         top_k=40,
         top_p=0.9,
         repetition_penalty=1.15,
         pad_token_id=tok.eos_token_id,
         eos_token_id=tok.eos_token_id,
     )
-    decoded = tok.decode(out[0], skip_special_tokens=False)
-    raw = decoded[len(prompt):] if decoded.startswith(prompt) else decoded.split("<|assistant|>")[-1]
-    return clean_reply(raw)
+    inputs = tok(prompt, return_tensors="pt").to(device)
+
+    for attempt, sample in enumerate((True, True, False)):
+        out = model.generate(
+            **inputs,
+            do_sample=sample and temperature > 0,
+            temperature=max(temperature, 0.01) if sample else 1.0,
+            **gen_kwargs,
+        )
+        decoded = tok.decode(out[0], skip_special_tokens=False)
+        raw = decoded[len(prompt):] if decoded.startswith(prompt) else decoded.split("<|assistant|>")[-1]
+        reply = clean_reply(raw)
+        if reply:
+            return reply
+
+    return ""
 
 
 def chat(checkpoint: Path, temperature: float, max_tokens: int) -> None:
@@ -78,7 +88,9 @@ def chat(checkpoint: Path, temperature: float, max_tokens: int) -> None:
 
         prompt = build_prompt(history, user_msg)
         reply = generate_reply(model, tok, prompt, device, temperature, max_tokens)
-        print(f"Assistant: {reply or '(no response)'}\n")
+        if not reply:
+            reply = "I'm still learning — try rephrasing or ask something from coding, math, or study help."
+        print(f"Assistant: {reply}\n")
         history.append((user_msg, reply))
         if len(history) > 4:
             history = history[-4:]
